@@ -50,10 +50,17 @@ All Powerline fonts installed to /home/miguel/.local/share/fonts
 ```
 
 Still missing more configs:
+
 * vala syntax highlighting and vala support
 	* inside .vim/
 		* ftdetect/vala.vim
 		* syntax/vala.vim
 * tagbar/taglist on vala (difficult!)
 * Install exuberant-ctags + anjuta-ctags (:/)
-* Themes... valloric++ (Optional)
+* Themes... valloric++
+
+
+powerline folder contains tmux and vim files used on FC23 @work
+
+## Created using [markdown editor](https://jbt.github.io/markdown-editor/)
+
