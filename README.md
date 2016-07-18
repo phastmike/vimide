@@ -58,6 +58,8 @@ Still missing more configs:
 * tagbar/taglist on vala (difficult!)
 * Install exuberant-ctags + anjuta-ctags (:/)
 * Themes... valloric++
+* TMUX Mouse mode
+* Bclose (Buffer close as plugin or code on .vimrc)
 
 
 powerline folder contains tmux and vim files used on FC23 @work
