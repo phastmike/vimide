@@ -61,8 +61,8 @@ Still missing more configs:
 * TMUX Mouse mode
 * Bclose (Buffer close as plugin or code on .vimrc)
 
-
 powerline folder contains tmux and vim files used on FC23 @work
 
-## Created using [markdown editor](https://jbt.github.io/markdown-editor/)
+## Created using vi and [markdown editor](https://jbt.github.io/markdown-editor/)
 
+Added colorschemes on .vim/Colors/ (valloric, github, flattened...)
