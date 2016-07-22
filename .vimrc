@@ -32,6 +32,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'rbgrouleff/bclose.vim'
 Bundle 'edkolev/tmuxline.vim'
 
 " All of your Plugins must be added before the following line
@@ -93,7 +94,8 @@ let vala_no_tab_space_error = 1
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#bufer_nr_show = 1
 " Vim keyboard maps
 " tagbar requires exuberant-ctags
 nmap <silent> <F2> :NERDTreeToggle<CR>
