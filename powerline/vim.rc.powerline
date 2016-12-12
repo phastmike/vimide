@@ -14,6 +14,7 @@ set fillchars+=stl:\ ,stlnc:\
 nmap <silent> <F2> :NERDTreeToggle<CR>
 nmap <silent> <F4> :TagbarToggle<CR>
 nmap <silent> <F3> :TlistToggle<CR>
+nmap <silent> <F5> :IndentLinesToggle<CR>
 
 "Taglist
 let Tlist_Exit_OnlyWindow = 1 "if taglist window is the only window left, exit vim
@@ -139,8 +140,22 @@ endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose('<bang>', '<args>')
 nnoremap <silent> <Leader>bd :Bclose<CR>
 nnoremap <silent> <Leader>bD :Bclose!<CR>
+"
 "------------------------------------------------------------------------------------------ 
 " Vala tagbar ctags
+let g:tagbar_ctags_bin = "/usr/bin/anjuta-tags"
+
+
+" NERDTree quit vim if only nerdtree open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"NERDTree Auto open nerdtree on vim startup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" NERDTree Filter (4444Vala)
+let NERDTreeIgnore=['\.c$','\.o$']
+
 
 " Powerline bufferlist
 set showtabline=2

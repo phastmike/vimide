@@ -21,7 +21,7 @@ Some systems only have, by default, vim-minimal. To use vi/vim with more advance
 
 Afterwards, copy to .vimrc to $HOMEDIR
 
-Open vi/vim and type ```:PluginsInstall.``` Restart vi/vim and it should be working!
+Open vi/vim and type ```:PluginsInstall```. Restart vi/vim and it should be working!
 
 Next we must install powerline patched fonts from https://github.com/powerline/fonts :
 
@@ -63,6 +63,6 @@ Still missing more configs:
 
 powerline folder contains tmux and vim files used on FC23 @work
 
-## Created using vi and [markdown editor](https://jbt.github.io/markdown-editor/)
+## Created using vi, [markdown editor](https://jbt.github.io/markdown-editor/) and ReText
 
 Added colorschemes on .vim/Colors/ (valloric, github, flattened...)
