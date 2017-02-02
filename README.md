@@ -66,3 +66,7 @@ powerline folder contains tmux and vim files used on FC23 @work
 ## Created using vi, [markdown editor](https://jbt.github.io/markdown-editor/) and ReText
 
 Added colorschemes on .vim/Colors/ (valloric, github, flattened...)
+
+Shell colors from:
+http://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+

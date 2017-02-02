@@ -33,6 +33,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'rbgrouleff/bclose.vim'
+Plugin 'Yggdroot/indentLine'
 Bundle 'edkolev/tmuxline.vim'
 
 " All of your Plugins must be added before the following line
@@ -89,15 +90,50 @@ let vala_no_tab_space_error = 1
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
 
+"-------------------------------------------------------------------
+"vim tabs
+"set tabstop=4 shiftwidth=4 expandtab
+autocmd FileType * set tabstop=3|set shiftwidth=3|set noexpandtab
+autocmd FileType c set tabstop=3|set shiftwidth=3|set expandtab
+autocmd FileType vala set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+
+
+" Work-around Tag List for Vala
+let tlist_vala_settings='c#;d:macro;t:typedef;n:namespace;c:class;'.
+  \ 'E:event;g:enum;s:struct;i:interface;'.
+  \ 'p:properties;m:method'
+
+" Vala tagbar ctags
+"let g:tagbar_ctags_bin = "/usr/bin/anjuta-tags"
+
+
+" NERDTree quit vim if only nerdtree open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"NERDTree Auto open nerdtree on vim startup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" NERDTree Filter (Vala, filter .c and .o)
+let NERDTreeIgnore=['\.c$','\.o$']
+
+"-------------------------------------------------------------------
+
+
+
+
 
 " Airline settings
+" -----------------------------------------------------------------
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-" Vim keyboard maps
-" tagbar requires exuberant-ctags
+
+" Keyboard mappings
+" -----------------------------------------------------------------
 nmap <silent> <F2> :NERDTreeToggle<CR>
 nmap <silent> <F4> :TagbarToggle<CR>
-
+nmap <silent> <F5> :IndentLinesToggle<CR>
