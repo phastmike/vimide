@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 #
 # setup.sh
 # A shell script that installs and/or prepares Vim and Tmux as development tools.
