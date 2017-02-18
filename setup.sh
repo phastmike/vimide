@@ -1,10 +1,10 @@
 #!/usr/bin/sh
 #
 # setup.sh
-# A shell script that installs and/or prepares Vim and Tmux as development tools.
+# A shell script that installs and prepares Vim and Tmux as development tools.
 #
 # TODO: Could check result from shell commands and write result instead of hardcoded "Done."
-#       Add NERDtree filter from devforge PC .vimrc
+# 
 ############################################################################################
 
 # Just some fancy colors for terminal feedback
