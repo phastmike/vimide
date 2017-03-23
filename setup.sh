@@ -47,18 +47,35 @@ On_Black='\033[40m'       # Black
 On_Red='\033[41m'         # Red
 # --------------------------------------------
 
+function check_result () {
+	if [[ $1 -eq 0 ]]; then
+		echo -e "[ OK ]"
+	else
+		echo -e "[FAIL]"
+	fi
+}
+
 # Shell info
-echo -e "${BBlue}******************************************************************"
-echo -e "${BBlue}* Setting VIM and TMUX as development tools (v1.0) (fc24 and up) *"
-echo -e "${BBlue}******************************************************************"
+echo -e "${BBlue}"
+echo -e "******************************************************************"
+echo -e "* Setting VIM and TMUX as development tools (v1.0) (fc24 and up) *"
+echo -e "******************************************************************"
 echo -e "${Color_Off}"
 
 # Backup any existing .vimrc to .vimrc.old
-echo -e "${BBlue}> Backup .vimrc to .vimrc.old and set the new one"
+echo -e "${BBlue}"
+echo -e "> Backup .vimrc to .vimrc.old and set the new one"
 echo -e "${Color_Off}"
-cp ~/.vimrc ~/.vimrc.old
-cp .vimrc ~/.vimrc
-echo -e "Done."
+
+echo -e -n "   - Backup existing .vimrc to .vimrc.old "
+cp ~/.vimrc ~/.vimrc.old 2> /dev/null
+check_result $?
+
+echo -e -n "   - Push new .vimrc to local folder "
+cp .vimrc ~/.vimrc 2> /dev/null
+check_result $?
+
+#echo -e "Done."
 echo -e "${Color_Off}"
 
 # Install powerline fonts and should set terminal to one of these patched fonts
