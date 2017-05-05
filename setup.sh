@@ -3,12 +3,15 @@
 # setup.sh
 # A shell script that installs and prepares Vim and Tmux as development tools.
 #
-# TODO: Could check result from shell commands and write result instead of hardcoded "Done."
+# TODO: Could check result from shell commands and write result instead of
+# hardcoded "Done."
 # 
-############################################################################################
+################################################################################
 
+##############################################
 # Just some fancy colors for terminal feedback
-# --------------------------------------------
+##############################################
+
 # Reset
 Color_Off='\033[0m'       # Text Reset
 
@@ -45,15 +48,21 @@ UWhite='\033[4;37m'       # White
 # Background
 On_Black='\033[40m'       # Black
 On_Red='\033[41m'         # Red
-# --------------------------------------------
+
+##############################################
+
+# This function checks the console command
+# result and dumps feedback text
 
 function check_result () {
 	if [[ $1 -eq 0 ]]; then
-		echo -e "[ OK ]"
+		echo -e "[ ${BGreen}OK${Color_Off} ]"
 	else
-		echo -e "[FAIL]"
+		echo -e "[${BRed}FAIL${Color_Off}]"
 	fi
 }
+
+##############################################
 
 # Shell info
 echo -e "${BBlue}"
@@ -67,11 +76,11 @@ echo -e "${BBlue}"
 echo -e "> Backup .vimrc to .vimrc.old and set the new one"
 echo -e "${Color_Off}"
 
-echo -e -n "   - Backup existing .vimrc to .vimrc.old "
+echo -e -n "   - backup existing .vimrc to .vimrc.old "
 cp ~/.vimrc ~/.vimrc.old 2> /dev/null
 check_result $?
 
-echo -e -n "   - Push new .vimrc to local folder "
+echo -e -n "   - push new .vimrc to local folder "
 cp .vimrc ~/.vimrc 2> /dev/null
 check_result $?
 
@@ -81,71 +90,97 @@ echo -e "${Color_Off}"
 # Install powerline fonts and should set terminal to one of these patched fonts
 # Using Droid Sans Mono for powerline
 echo -e "${BBlue}> Install 'powerline' patched fonts..."
-echo -e ">> git clone https://github.com/powerline/fonts ~./fonts"
 echo -e "${Color_Off}"
-git clone https://github.com/powerline/fonts ./fonts 
-cd fonts/ && sh install.sh && cd ..
+echo -e -n "  - clone powerline fonts from github to ~./fonts "
+git clone https://github.com/powerline/fonts ./fonts > /dev/null 2> /dev/null 
+check_result $?
+
+echo -e -n "  - install fonts "
+cd fonts/ 2> /dev/null && sh install.sh > /dev/null 2> /dev/null && cd ..
+check_result $?
+
+echo -e -n "  - clean dowloaded data "
 rm -rf fonts/
-echo -e "Done."
+check_result $?
+
 echo -e "${Color_Off}"
 
 # Fedora ships vi as vim-minimal, so we need to install vim-enhanced
 # since F25, seems that vi is not linked to vim, must run vim instead of vi :/ ?
 # Should verify if already installed...
-echo -e "${BBlue}> Install vim-enhanced..."
+echo -e "${BBlue}> Install vim-enhanced"
 echo -e "${Color_Off}"
-sudo dnf install vim-enhanced
-echo -e "Done."
+sudo dnf install vim-enhanced 2> /dev/null
+check_result $?
 echo -e "${Color_Off}"
 
 # Install Vundle Vim plugin manager, there are others...
 echo -e "${BBlue}> Install Vundle, plugin manager for vi(m)..."
-echo -e ">> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim${Color_Off}"
 echo -e "${Color_Off}"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-echo -e "Done."
+echo -e -n "  - clone Vundle from github to ~/.vim/bundle/Vundle.vim "
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 2> /dev/null
+check_result $?
 echo -e "${Color_Off}"
 
 # Force plugin installation
 echo -e "${BBlue}> Setup plugins via vundle..."
 echo -e "${Color_Off}"
-vim +PluginInstall +qall
-echo -e "Done."
+vim +PluginInstall +qall 2> /dev/null
+check_result $?
 echo -e "${Color_Off}"
 
-# Missing...
-echo -e "${BBlue}> Install exuberant-ctags..."
-echo -e ">> missing anjuta tags (do it manually...)"
+echo -e "${BBlue}> Install exuberant-ctags (do anjuta tags manually...)"
 echo -e "${Color_Off}"
-echo -e "Missing..."
-echo -e "Done."
+sudo dnf install ctags 2> /dev/null
+check_result $?
 echo -e "${Color_Off}"
 
 # Install vala vim files
 # Install these by cp or from github, some are files (from vala) and some colorschemes 
-echo -e "${BBlue}> Install Vala vim files (ftdetect/syntax/colors)${Color_Off}"
+echo -e "${BBlue}> Install Vala vim files (ftdetect/syntax/colors)"
 echo -e "${Color_Off}"
-mkdir ~/.vim/syntax
-mkdir ~/.vim/ftdetect
-mkdir ~/.vim/colors
+echo -e -n "  - make directory ~/.vim/syntax "
+mkdir ~/.vim/syntax 2> /dev/null
+check_result $?
+echo -e -n "  - make directory ~/.vim/syntax "
+mkdir ~/.vim/ftdetect 2> /dev/null
+check_result $?
+echo -e -n "  - make directory ~/.vim/syntax "
+mkdir ~/.vim/colors 2> /dev/null
+check_result $?
+
+echo -e -n "  - copy .vim/syntax/vala.vim ~/.vim/syntax/vala.vim "
 cp .vim/syntax/vala.vim ~/.vim/syntax/vala.vim
+check_result $?
+
+echo -e -n "  - copy .vim/ftdetect/vala.vim ~/.vim/ftdetect/vala.vim "
 cp .vim/ftdetect/vala.vim ~/.vim/ftdetect/vala.vim
+check_result $?
+
+echo -e -n "  - copy .vim/colors/valloric.vim ~/.vim/colors/valloric.vim "
 cp .vim/colors/valloric.vim ~/.vim/colors/valloric.vim
+check_result $?
+
+echo -e -n "  - copy .vim/colors/github.vim ~/.vim/colors/github.vim "
 cp .vim/colors/github.vim ~/.vim/colors/github.vim
-echo -e "Done."
+check_result $?
 echo -e "${Color_Off}"
 
 # Install TMUX
 echo -e "${BBlue}> Install Tmux..."
 echo -e "${Color_Off}"
-sudo dnf install tmux
-echo -e "Done."
+sudo dnf install tmux 2> /dev/null
+check_result $?
 echo -e "${Color_Off}"
 
 # Backup any existing .tmux.conf to .tmux.conf.old and set the new one
 echo -e "${BBlue}> Backup .tmux.conf to .tmux.conf.old and set the new one"
 echo -e "${Color_Off}"
+echo -e -n "  - backup existing tmux.conf on ~/ "
 cp ~/.tmux.conf ~/.tmux.conf.old
+check_result $?
+
+echo -e -n "  - copy tmux.conf to ~/tmux.conf "
 cp .tmux.conf ~/.tmux.conf
-echo -e "Done."
+check_result $?
 echo -e "${Color_Off}"
