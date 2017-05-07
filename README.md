@@ -1,11 +1,11 @@
 # VIMIDE
-Shell script to prepare **Vim** as a simple **IDE**. 
+Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code editor with focus on [Vala](http://wiki.gnome.org/Projects/Vala) language. 
 
 ## Description
-	- Using [Vundle](https://github.com/VundleVim/Vundle.vim) as Vi/Vim plugin manager.
+	- Using [Vundle](https://github.com/VundleVim/Vundle.vim) as Vim plugin manager.
 	- Focus on Vala language (adds syntax highlighting and support)
 	- anjuta-tags must be done manually (depends on anjuta)
-	- Includes 2 colorschemes (Valloric and github)
+	- Includes 2 additional colorschemes (valloric and github)
 	- Installs powerline fonts
 	- Installs tmux
 
