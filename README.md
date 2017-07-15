@@ -10,4 +10,8 @@ Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code edito
 	- Installs tmux
 
 ## Setup
-Run the shell script *setup.sh*.
+Run the shell script *`setup.sh`*.
+
+## Powerline font
+
+Set the terminal font to a powerline one. I've been using `Droid Sans Mono Dotted for Powerline Regular 11`

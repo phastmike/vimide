@@ -184,3 +184,10 @@ echo -e -n "  - copy tmux.conf to ~/tmux.conf "
 cp .tmux.conf ~/.tmux.conf 2> /dev/null
 check_result $?
 echo -e "${Color_Off}"
+
+echo -e -n "${BBlue}> Dont forget to set the terminal font:"
+echo -e -n "${BBlue}  Ex.: Droid Sans Mono Dotted for Powerline Regular 11"
+echo -e "${Color_Off}"
+
+echo -e -n "${BBlue}> Finished <"
+echo -e "${Color_Off}"
