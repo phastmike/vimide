@@ -181,6 +181,6 @@ cp ~/.tmux.conf ~/.tmux.conf.old
 check_result $?
 
 echo -e -n "  - copy tmux.conf to ~/tmux.conf "
-cp .tmux.conf ~/.tmux.conf
+cp .tmux.conf ~/.tmux.conf 2> /dev/null
 check_result $?
 echo -e "${Color_Off}"
