@@ -21,7 +21,7 @@ if has_key(s:ctags_types, 'vala') || executable('anjuta-tags')
   let type_vala.ctagstype = 'vala' <------- Change vala
   let type_vala.kinds    
   ...
-``'
+```
 
 To:
 ```vim
