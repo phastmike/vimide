@@ -11,6 +11,7 @@ Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code edito
 
 ## Tagbar workaround
 It seems anjuta-tags isn't working so here is a workaround: 
+
 	- use anjuta-tags or ctags
 	- edit bundle/tagbar/autoload/tagbar.vim as shown below:
 
