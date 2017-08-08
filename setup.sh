@@ -129,7 +129,8 @@ vim +PluginInstall +qall 2> /dev/null
 check_result $?
 echo -e "${Color_Off}"
 
-echo -e "${BBlue}> Install exuberant-ctags (do anjuta tags manually...)"
+# anjuta-tags must be done manually to avoid installing anjuta for those who don't want it
+echo -e "${BBlue}> Install exuberant-ctags"
 echo -e "${Color_Off}"
 sudo dnf install ctags 2> /dev/null
 check_result $?

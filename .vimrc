@@ -91,20 +91,14 @@ let vala_no_tab_space_error = 1
 "let vala_minlines = 120
 
 "-------------------------------------------------------------------
-"vim tabs
-"set tabstop=4 shiftwidth=4 expandtab
-autocmd FileType * set tabstop=3|set shiftwidth=3|set noexpandtab
-autocmd FileType c set tabstop=3|set shiftwidth=3|set expandtab
-autocmd FileType vala set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+" Work-around Tag List for Vala (not being used)
+"let tlist_vala_settings='c#;d:macro;t:typedef;n:namespace;c:class;'.
+"  \ 'E:event;g:enum;s:struct;i:interface;'.
+"  \ 'p:properties;m:method'
 
-
-" Work-around Tag List for Vala
-let tlist_vala_settings='c#;d:macro;t:typedef;n:namespace;c:class;'.
-  \ 'E:event;g:enum;s:struct;i:interface;'.
-  \ 'p:properties;m:method'
-
+"-------------------------------------------------------------------
 " Vala tagbar ctags
+" Commented as vala tags are broken!
 "let g:tagbar_ctags_bin = "/usr/bin/anjuta-tags"
 
 
