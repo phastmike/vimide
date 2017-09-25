@@ -131,3 +131,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 nmap <silent> <F2> :NERDTreeToggle<CR>
 nmap <silent> <F4> :TagbarToggle<CR>
 nmap <silent> <F5> :IndentLinesToggle<CR>
+
+" Set default colorscheme
+" -----------------------
+colorscheme valloric
