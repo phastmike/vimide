@@ -135,3 +135,19 @@ nmap <silent> <F5> :IndentLinesToggle<CR>
 " Set default colorscheme
 " -----------------------
 colorscheme valloric
+
+
+" ToggleColorColumn to mark column 80
+" Use F3 to toggle
+" -----------------------------------
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
+fun! ToggleCC()
+   if &cc == ''
+	   exec "set cc=".join(range(80,999),",")
+	else
+	   set cc=
+	endif
+endfun
+
+nnoremap <F3> :call ToggleCC()<CR>
