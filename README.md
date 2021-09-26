@@ -13,11 +13,11 @@ Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code edito
 It seems anjuta-tags isn't working so here is a workaround: 
 
 - use anjuta-tags or ctags
-- edit bundle/tagbar/autoload/tagbar.vim as shown below:
+- edit ~/.vim/bundle/tagbar/autoload/tagbar/types/ctags.vim as shown below:
 
 From:
 ```vim
-if has_key(s:ctags_types, 'vala') || executable('anjuta-tags')
+if has_key(s:ctags_types, 'vala') || executable('anjuta-tags') <--- Change anjuta-tags 
   let type_vala = s:TypeInfo.New()
   let type_vala.ctagstype = 'vala' <------- Change vala
   let type_vala.kinds    
@@ -26,7 +26,7 @@ if has_key(s:ctags_types, 'vala') || executable('anjuta-tags')
 
 To:
 ```vim
-if has_key(s:ctags_types, 'vala') || executable('anjuta-tags')
+if has_key(s:ctags_types, 'vala') || executable('ctags') <--- to ctags
   let type_vala = s:TypeInfo.New()
   let type_vala.ctagstype = 'C#'   <------- To C#
   let type_vala.kinds    
@@ -34,6 +34,8 @@ if has_key(s:ctags_types, 'vala') || executable('anjuta-tags')
 ```
 
 This will force C# as the language used. Not the best solution but works to some extent.
+
+It will also complain on Plugin updates as changes are local... 
 
 ## Setup
 Run the shell script *`setup.sh`*.
