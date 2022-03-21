@@ -120,11 +120,16 @@ let NERDTreeIgnore=['\.c$','\.o$']
 
 " Airline settings
 " -----------------------------------------------------------------
+"  https://github.com/vim-airline/vim-airline/wiki/Screenshots
+" ----------------------------------------------------------------- 
 set laststatus=2
+let g:airline_theme='dark'
+"let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tmuxline#enabled = 0
 
 " Keyboard mappings
 " -----------------------------------------------------------------
