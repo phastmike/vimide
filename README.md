@@ -12,10 +12,13 @@ Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code edito
 ## Tagbar workaround
 It seems anjuta-tags isn't working so here is a workaround: 
 
-- use anjuta-tags or ctags
-- edit ~/.vim/bundle/tagbar/autoload/tagbar/types/ctags.vim as shown below:
-
+- use **ctags** instead of **anjuta-tags**
+- edit (as shown below):
+   - `~/.vim/bundle/tagbar/autoload/tagbar/types/ctags.vim`
+   - `~/.vim/bundle/tagbar/autoload/tagbar/types/uctags.vim`
+   
 From:
+
 ```vim
 if has_key(s:ctags_types, 'vala') || executable('anjuta-tags') <--- Change anjuta-tags 
   let type_vala = s:TypeInfo.New()
@@ -25,10 +28,11 @@ if has_key(s:ctags_types, 'vala') || executable('anjuta-tags') <--- Change anjut
 ```
 
 To:
+
 ```vim
 if has_key(s:ctags_types, 'vala') || executable('ctags') <--- to ctags
   let type_vala = s:TypeInfo.New()
-  let type_vala.ctagstype = 'C#'   <------- To C#
+  let type_vala.ctagstype = 'c#'   <------- To C#
   let type_vala.kinds    
   ...
 ```
