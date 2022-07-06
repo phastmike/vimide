@@ -6,28 +6,12 @@ syntax on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-""Plugin 'L9'
-" Git plugin not hosted on GitHub
-""Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-""Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-""Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-""Plugin 'ascenator/L9', {'name': 'newL9'}
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
@@ -40,7 +24,7 @@ Bundle 'edkolev/tmuxline.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+" filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -112,12 +96,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " NERDTree Filter (Vala, filter .c and .o)
 let NERDTreeIgnore=['\.c$','\.o$']
 
-"-------------------------------------------------------------------
-
-
-
-
-
+" -----------------------------------------------------------------
 " Airline settings
 " -----------------------------------------------------------------
 "  https://github.com/vim-airline/vim-airline/wiki/Screenshots
@@ -156,3 +135,12 @@ fun! ToggleCC()
 endfun
 
 nnoremap <F3> :call ToggleCC()<CR>
+
+" Dots for spaces and so on
+" -------------------------
+set listchars=tab:→\ ,space:·
+nnoremap <F6> :set list! list?<CR>
+
+" Toggle Line numbers
+" -------------------
+nnoremap <F7> :set nu! nu?<CR>

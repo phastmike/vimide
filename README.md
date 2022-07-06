@@ -1,6 +1,8 @@
 # VIMIDE
 Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code editor with focus on [Vala](http://wiki.gnome.org/Projects/Vala) language. 
 
+![vimide](vimide.png "vimide")
+
 ## Description
 - Using [Vundle](https://github.com/VundleVim/Vundle.vim) as Vim plugin manager.
 - Focus on Vala language (adds syntax highlighting and support)
@@ -8,6 +10,17 @@ Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code edito
 - Includes 2 additional colorschemes (valloric and github)
 - Installs powerline fonts
 - Installs tmux
+
+## Shortcut toggles
+
+|Key|Toggles|
+|---|-------|
+|<kbd>F2</kbd>| Nerdtree (Left side pane) |
+|<kbd>F3</kbd>| Line 80 marker |
+|<kbd>F4</kbd>| Tagbar (Right side pane) |
+|<kbd>F5</kbd>| Indentation markers|
+|<kbd>F6</kbd>| Space and Tab markers |
+|<kbd>F7</kbd>| Line numbers |
 
 ## Tagbar workaround
 It seems anjuta-tags isn't working so here is a workaround: 
