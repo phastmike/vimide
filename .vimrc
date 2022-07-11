@@ -100,7 +100,7 @@ let NERDTreeIgnore=['\.c$','\.o$']
 " Airline settings
 " -----------------------------------------------------------------
 "  https://github.com/vim-airline/vim-airline/wiki/Screenshots
-" ----------------------------------------------------------------- 
+" -----------------------------------------------------------------
 set laststatus=2
 let g:airline_theme='dark'
 "let g:airline_theme='papercolor'
