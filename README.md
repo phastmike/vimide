@@ -24,7 +24,7 @@ Shell script to prepare **Vim** and **Tmux** as a simple **IDE**'like code edito
 |<kbd>F7</kbd>|  Tmux  | **previous Window** |
 |<kbd>F8</kbd>|  Tmux  | next Window |
 |<kbd>F9</kbd>|  Tmux  | new Window |
-|<kbd>F11</kbd>|  Tmux  | tmux split with zsh (*Check*) - Conflict with gnome terminal Fullscreen F11|
+|~~<kbd>F11</kbd>~~|  ~~Tmux~~  | ~~tmux split with zsh (*Check*) - Conflict with gnome terminal Fullscreen F11~~|
 |<kbd>F12</kbd>|  Tmux  | send-prefix (*nested*) |
 
 ## Tagbar workaround
