@@ -44,6 +44,7 @@ set ttymouse=xterm2
 "set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType * set tabstop=3|set shiftwidth=3|set noexpandtab
 autocmd FileType c set tabstop=3|set shiftwidth=3|set expandtab
+autocmd FileType xml set tabstop=3|set shiftwidth=3|set expandtab
 autocmd FileType vala set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
