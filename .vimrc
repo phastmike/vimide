@@ -39,7 +39,12 @@ filetype plugin indent on    " required
 "
 set mouse=a
 set t_Co=256
-set ttymouse=xterm2
+
+" If on tmux, use ttymouse=xterm2
+if $TERM == 'tmux-256color'
+	set ttymouse=xterm2
+endif
+
 "vim tabs
 "set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType * set tabstop=3|set shiftwidth=3|set noexpandtab
