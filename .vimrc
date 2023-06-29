@@ -49,7 +49,7 @@ endif
 "set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType * set tabstop=3|set shiftwidth=3|set noexpandtab
 autocmd FileType c set tabstop=3|set shiftwidth=3|set expandtab
-autocmd FileType xml set tabstop=3|set shiftwidth=3|set expandtab
+autocmd FileType xml set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType vala set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
@@ -150,3 +150,8 @@ nnoremap <F6> :set list! list?<CR>
 " Toggle Line numbers
 " -------------------
 nnoremap <F7> :set nu! nu?<CR>
+
+augroup XML
+    autocmd!
+    autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
+augroup END
