@@ -42,9 +42,10 @@ set t_Co=256
 
 " If on tmux, use ttymouse=xterm2
 " -- NO LNGER WORKS ON TMUX3.4 2024/April --
-"if $TERM == 'tmux-256color'
-"	set ttymouse=xterm2
-"endif
+" -- Needed again in 2024/June --
+if $TERM == 'tmux-256color'
+	set ttymouse=xterm2
+endif
 
 "vim tabs
 "set tabstop=4 shiftwidth=4 expandtab
